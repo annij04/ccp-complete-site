@@ -1,0 +1,233 @@
+
+body {
+    background-color: #e4e3dc;
+    color: #345163;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    transition: background-color 0.5s ease; /* transition for background color change */
+}
+
+/* edit link color */
+.item a {
+    color: #345163;
+}
+
+/* skip to main button */
+.skip-main {
+    position: absolute;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    background-color: #51514D;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+}
+.skip-main:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* styling nav */
+nav {
+    background-color: #8A3528;
+    height: 70px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li {
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+    text-decoration: none;
+    font-size: 1em;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+/* styling current page */
+nav ul li a:hover {
+    background-color: transparent;
+    color: grey;
+}
+.active-page {
+    font-weight: bolder;
+    font-size: larger;
+    text-decoration: underline;
+}
+
+
+/* hover effect gallery */
+.gallery-container img {
+    transition: transform 2s ease;
+    position: relative;
+}
+.gallery-container img:hover {
+    transform: rotateY(180deg); /* flip image on hover */
+}
+
+/* item is grid */
+.item {
+    display: grid;
+    border: 5px solid #8A3528;
+    padding: 20px;
+    perspective: 1000px; /* perspective for 3D effect */
+    justify-items: center;
+}
+
+ /* images/videos have space and borders */
+img, video {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin: 5px;
+    border: 2px solid #345163;
+}
+
+/* bullet points for lists */
+ul, ol {
+    list-style-type: decimal;
+}
+
+
+
+/* styling change color background button */
+#colorPicker {
+    margin-right: 10px;
+}
+#changeBgButton {
+    background-color: #345163;
+    color: white;
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; /* round corners */
+    cursor: pointer; /* cursor style on hover */
+}
+#changeBgButton:hover {
+    background-color: #2f749e; /* lighter on hover */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Mobile */
+@media screen and (min-width: 0) {
+    .nav_links {
+        justify-content: space-between; 
+    }
+    /* lay out links horizontally */
+    ul {
+        display: flex;
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* one column taking up the full width */
+        gap: 20px; /* Gap between rows */
+    }
+    .color-options {
+        display: flex;
+        justify-content: center;
+    }
+    #colorPicker {
+        margin-right: 10px;
+    }
+    #changeBgButton {
+        background-color: #345163; 
+        color: white;
+        padding: 3px 30px;
+    }
+    /* styling headers */
+    h1 {
+        display: block;
+        font-size: 1em;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    h3 {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin: 10px;
+    }
+    label {
+        font-size: medium;
+        margin: 3px;
+    }
+    div {
+        font-size: .9em;
+    }
+    p {
+        margin: 25px 6px;
+    }
+    nav {
+        margin: 0;
+    }
+}
+
+
+/* Tablet */
+@media screen and (min-width: 769px) {
+    h1,
+    .item h2,
+    .item h3 {
+        font-size: 1.8em;
+    }
+    .item p,
+    .item ul li {
+        font-size: 1.2em;
+    }
+    nav ul li a {
+        font-size: 1.2em;
+        padding: 15px 20px;
+    }
+    main {
+        overflow-y: scroll; /* scroll bar */
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* two columns */
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        grid-template-rows: auto;
+        gap: 20px; /* gap between each item */
+    }
+    p {
+        margin: 20px 0px;
+        line-height: 1.2;
+    }
+
+    .likes-container ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* 1025 for desktop */
